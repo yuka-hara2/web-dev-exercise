@@ -1,10 +1,10 @@
 /* Base */
 :root{
-  --bg:#f7faef;           /* ほんのりレモン系の淡色 */
+  --bg:#f7faef;           /* light lemon */
   --card:#ffffff;
   --ink:#27303a;
   --muted:#6b7280;
-  --brand:#7cc35e;        /* アクセント（緑寄りレモン） */
+  --brand:#7cc35e;        /* green lemon */
   --brand-ink:#174d2a;
   --line:#e5e7eb;
   --focus:#a3e635;        /* focus ring */
@@ -152,7 +152,7 @@ button.secondary{
   .card{
     padding: 28px;
   }
-  /* 2列っぽく配置する例：タイトルと開始日は横並び */
+  /* 2 lines */
   .form-row.inline{
     display:grid;
     grid-template-columns: 1fr 1fr;
