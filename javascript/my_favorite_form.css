@@ -1,0 +1,167 @@
+/* Base */
+:root{
+  --bg:#f7faef;           /* ほんのりレモン系の淡色 */
+  --card:#ffffff;
+  --ink:#27303a;
+  --muted:#6b7280;
+  --brand:#7cc35e;        /* アクセント（緑寄りレモン） */
+  --brand-ink:#174d2a;
+  --line:#e5e7eb;
+  --focus:#a3e635;        /* focus ring */
+}
+
+* { box-sizing: border-box; }
+body{
+  margin:0;
+  font-family: system-ui, Arial, sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+}
+
+.container{
+  max-width: 720px;
+  margin: 56px auto;
+  padding: 0 16px;
+}
+
+h1{
+  text-align:center;
+  margin: 0 0 20px;
+  font-size: 28px;
+}
+
+/* Card */
+.card{
+  background:var(--card);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  border: 1px solid var(--line);
+}
+
+/* Form layout */
+.form-row{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin-bottom:16px;
+}
+
+label, legend{
+  font-weight:600;
+}
+
+.req{
+  color:var(--brand-ink);
+}
+
+input[type="text"],
+input[type="date"],
+select,
+textarea{
+  width:100%;
+  padding:12px 14px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#fff;
+  color:var(--ink);
+  font-size:16px;
+}
+
+textarea{ resize: vertical; }
+
+input:focus,
+select:focus,
+textarea:focus{
+  outline: 3px solid var(--focus);
+  border-color: var(--brand);
+}
+
+/* Radio group */
+fieldset{
+  border:1px dashed var(--line);
+  border-radius:12px;
+  padding:12px 14px;
+}
+
+legend{
+  padding:0 6px;
+}
+
+.radios{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:6px;
+}
+
+.radios label{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:#fafafa;
+}
+
+/* Hints */
+.hint{
+  color:var(--muted);
+  font-size: 13px;
+}
+
+/* Actions */
+.actions{
+  display:flex;
+  gap:12px;
+  justify-content:flex-end;
+  margin-top: 8px;
+}
+
+button{
+  cursor:pointer;
+  padding:12px 18px;
+  border-radius:999px;
+  border:1px solid transparent;
+  font-weight:600;
+  font-size:15px;
+  background:var(--brand);
+  color:#0b1f12;
+  transition: transform .02s ease, box-shadow .2s ease, background .2s ease;
+  box-shadow: 0 6px 16px rgba(124,195,94,.25);
+}
+
+button:hover{
+  transform: translateY(-1px);
+}
+
+button:active{
+  transform: translateY(0);
+}
+
+button.secondary{
+  background:#fff;
+  border-color: var(--line);
+  color: var(--ink);
+  box-shadow:none;
+}
+
+.error {
+  color: red;
+  font-size: 0.9em;
+  margin-left: 10px;
+}
+
+/* Responsive tweak */
+@media (min-width: 640px){
+  .card{
+    padding: 28px;
+  }
+  /* 2列っぽく配置する例：タイトルと開始日は横並び */
+  .form-row.inline{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:16px;
+  }
+}

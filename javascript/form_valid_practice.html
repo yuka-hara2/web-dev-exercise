@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Form Valid Practice</title>
+  <link rel="stylesheet" href="form_valid_practice.css" />
+</head>
+<body>
+  <script src="form_valid_practice.js"></script>
+  <main class="container">
+    <h1>Form Valid Practice</h1>
+
+    <form action="#" id="validPracticeForm" method="post" class="card" novalidate>
+      <div class="form-row">
+        <label for="nickname">Nick Name <span class="req">*</span></label>
+        <input type="text" name="nickname" required />
+      </div>
+      <div class="form-row">
+        <label for="email">E-mail</label>
+        <input type="email" name="email" />
+      </div>
+      <div class="form-row">
+        <label for="tel">Tel</label>
+        <input type="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
+      </div>
+      <div class="form-row">
+        <label for="greeting-comment">Greeting Comment</label>
+        <input type="text" name="greeting-comment" maxlength="30" />
+      </div>
+      <div class="form-row">
+        <label for="age">Age</label>
+        <input type="number" name="age" min="15" />
+      </div>
+      <!-- Buttons -->
+      <div class="actions">
+        <button type="submit">Save</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

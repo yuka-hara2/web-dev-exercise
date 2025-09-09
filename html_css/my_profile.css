@@ -1,0 +1,42 @@
+body {
+  font-family: "Siemreap", sans-serif;
+  background-color: #6b395f;
+}
+
+.profile-area {
+  max-width: 550px;
+  margin: 50px auto;
+  background-color: #f7f6fb;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.profile-area h1 {
+  text-align: center;
+  color: #333;
+}
+
+.profile-img {
+  display: block;
+  margin: 20px auto;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+dl {
+  margin-top: 20px;
+}
+
+dt {
+  font-weight: bold;
+  margin-top: 10px;
+  color: #2c3e50;
+}
+
+dd {
+  margin: 0 0 10px 20px;
+  color: #555;
+}
