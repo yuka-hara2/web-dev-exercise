@@ -9,7 +9,7 @@
       <th>ID</th>
       <th>Name</th>
       <th>Category</th>
-      <th tab=2>Price</th>
+      <th colspan="2">Price</th>
     </tr>
   </thead>
   <tbody>

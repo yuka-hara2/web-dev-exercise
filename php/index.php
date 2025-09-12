@@ -17,7 +17,8 @@ switch ($_SERVER['PATH_INFO'] ?? $_SERVER['REQUEST_URI']) {
   
   case '/menu_list':
     $menus = Menu::getAll();
-    include 'views/menu_list.php';
+    // include 'views/menu_list.php';
+    render('menu_list', ['menus' => $menus]);
     break;
 
   case '/order_list':
