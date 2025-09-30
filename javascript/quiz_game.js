@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function showResult() {
     document.getElementById("quiz").classList.add("hidden");
     resultEl.classList.remove("hidden");
-    resultEl.textContent = `あなたのスコアは ${score} / ${quizData.length} です！`;
+    resultEl.textContent = `Your score is ${score} / ${quizData.length} !`;
   }
 
   // 最初の問題をロード

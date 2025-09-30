@@ -3,12 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Simple Quiz</title>
-    <style>
-      body { font-family: Arial, sans-serif; padding: 20px; }
-      .question { font-size: 1.2em; margin-bottom: 10px; }
-      .choices button { display: block; margin: 5px 0; }
-      .hidden { display: none; }
-    </style>
+    <link rel="stylesheet" href="quiz_game.css" />
   </head>
   <body>
     <script src="quiz_game.js"></script>
@@ -16,8 +11,10 @@
     <div id="quiz">
       <div id="question" class="question"></div>
       <div id="choices" class="choices"></div>
-      <button id="nextBtn" class="hidden">Next</button>
+      <div id="nextBtn" class="hidden next">
+        <button>Next</button>
+      </div>
     </div>
-    <div id="result" class="hidden"></div>
+    <div id="result" class="hidden result"></div>
   </body>
 </html>
