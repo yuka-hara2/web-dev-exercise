@@ -79,18 +79,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // សុពលភាពនៅពេលចុចប៊ូតុងចុះឈ្មោះ
   form.addEventListener("submit", function (event) {
     let isValid = validateTitle();
-    if (isValid) {
-      isValid = validateStartDate();
-    }
-    if (isValid) {
-      isValid = validateGenre();
-    }
-    if (isValid) {
-      isValid = validateType();
-    }
-    if (isValid) {
-      isValid = validateSummary();
-    }
+    isValid = validateStartDate() && isValid;
+    isValid = validateGenre() && isValid;
+    isValid = validateType() && isValid;
+    isValid = validateSummary() && isValid;
     if (!isValid) {
       event.preventDefault(); // stop submit
     }
