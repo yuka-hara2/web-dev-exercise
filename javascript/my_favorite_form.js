@@ -1,11 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
   const titleInput = document.getElementById("title");
-  const startDateInput = document.getElementById("start_date");
-  const genreInput = document.getElementById("genre");
-  const typeButtons = document.getElementsByName("type");
-  const summaryInput = document.getElementById("summary");
-  const form = document.getElementById("animeForm");
   const titleError = document.getElementById("titleError");
+  const startDateInput = document.getElementById("start_date");
+  const startDateError = document.getElementById("startDateError");
+  const genreInput = document.getElementById("genre");
+  const genreError = document.getElementById("genreError");
+  const typeButtons = document.getElementsByName("type");
+  const typeError = document.getElementById("typeError");
+  const summaryInput = document.getElementById("summary");
+  const summaryError = document.getElementById("summaryError");
+  const form = document.getElementById("animeForm");
 
   function validateTitle() {
     const value = titleInput.value.trim();
@@ -13,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
       titleError.textContent = "Title is required.";
       return false;
     }
-    if (value > 50) {
+    if (value.length > 50) {
       titleError.textContent = "No more than 50 characters allowed.";
       return false;
     }
