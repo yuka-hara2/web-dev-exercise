@@ -1,10 +1,10 @@
 
 <?php
   $oldCategory = $old['category'] ?? '';
-  $id = $old['id'] ?? null;
+  $id = $old['id'] ?? '';
 ?>
 
-<?php if (is_null($id)) : ?>
+<?php if (empty($id)) : ?>
   <h1>New Menu</h1>
 <?php else : ?>
   <h1>Edit Menu</h1>
@@ -18,7 +18,7 @@
   </ul>
 <?php endif; ?>
 
-<?php if (is_null($id)) : ?>
+<?php if (empty($id)) : ?>
   <form action="create_menu" method="post">
 <?php else : ?>
   <form action="update_menu" method="post">
@@ -45,6 +45,7 @@
   </div>
 
   <div>
-    <button type="submit"><?= is_null($id) ? "Create" : "Edit" ?></button>
+    <button type="submit"><?= empty($id) ? "Create" : "Edit" ?></button>
+    <a href="menu_list" class="button">Back to Menu List</a>
   </div>
 </form>

@@ -1,6 +1,8 @@
 
 <h1>Order List</h1>
 
+<a href="/" class="button">Top</a>
+
 <form action="order_list" method="get">
   <input type="date" name="cond_date" value=<?= h($cond_date) ?> />
   <button type="submit">search</button>

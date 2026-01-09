@@ -25,7 +25,7 @@ class MenuController {
 
     $menus = Menu::getAll();
     $message = "Created successfully!";
-    require __DIR__ . '/../views/menu_list.php';
+    render('menu_list', ['menus' => $menus, 'message' => $message]);
   }
 
   public function updateMenu($data) {
@@ -44,11 +44,11 @@ class MenuController {
 
     $menus = Menu::getAll();
     $message = "Updated successfully!";
-    require __DIR__ . '/../views/menu_list.php';
+    render('menu_list', ['menus' => $menus, 'message' => $message]);
   }
 
   private function showNewForm($errors, $old) {
-    require __DIR__ . '/../views/form_menu.php';
+    render('form_menu', ['errors' => $errors, 'old' => $old]);
   }
 
   private function setAttribute($data) {

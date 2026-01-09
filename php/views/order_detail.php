@@ -20,3 +20,5 @@
   <dt>Price</dt>
   <dd><?= h($order['price']) ?> Riel</dd>
 </dl>
+
+<a href="order_list" class="button">Back to Order List</a>

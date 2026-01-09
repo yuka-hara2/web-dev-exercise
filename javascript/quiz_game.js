@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // 問題データ
+  // Questions
   const quizData = [
     {
       question: "What is the keyword to declare a variable in JavaScript?",
@@ -26,11 +26,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const nextBtn = document.getElementById("nextBtn");
   const resultEl = document.getElementById("result");
 
-  // クイズを表示
+  // Try Animation!(ex. Text Zooming)
+  let scale = 1;
+  let grow = true;
+
+  // Show Quiz
   function loadQuiz() {
-    // 次へボタンを隠す
+    // Hide next button
     nextBtn.classList.add("hidden");
-    // 選択肢をクリア
+    // Clear Choices
     choicesEl.innerHTML = "";
 
     const currentData = quizData[currentQuiz];
@@ -44,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // 選択したとき
   function selectAnswer(e) {
     const selected = e.target.textContent;
     const correct = quizData[currentQuiz].answer;
@@ -59,11 +62,33 @@ document.addEventListener("DOMContentLoaded", function () {
     // Prevent other buttons from being pressed
     Array.from(choicesEl.children).forEach(btn => btn.disabled = true);
 
-    // 次へボタンを表示
+    // Show Next Button
     nextBtn.classList.remove("hidden");
   }
 
-  // 次の問題へ
+  // Text Zooming for Result
+  function animate() {
+    if (grow) {
+      scale += 0.01;
+      if (scale > 1.5) grow = false;
+    } else {
+      scale -= 0.01;
+      if (scale < 1) grow = true;
+    }
+
+    resultEl.style.transform = `scale(${scale})`;
+
+    requestAnimationFrame(animate);
+  }
+
+  function showResult() {
+    document.getElementById("quiz").classList.add("hidden");
+    resultEl.classList.remove("hidden");
+    resultEl.textContent = `Your score is ${score} / ${quizData.length} !`;
+    animate();
+  }
+
+  // Go to Next Quiz
   nextBtn.addEventListener("click", () => {
     currentQuiz++;
     if (currentQuiz < quizData.length) {
@@ -73,13 +98,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // 結果を表示
-  function showResult() {
-    document.getElementById("quiz").classList.add("hidden");
-    resultEl.classList.remove("hidden");
-    resultEl.textContent = `Your score is ${score} / ${quizData.length} !`;
-  }
-
-  // 最初の問題をロード
+  // Load the first quiz
   loadQuiz();
 });

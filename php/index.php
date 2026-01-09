@@ -8,11 +8,11 @@ require_once 'controllers/menu.php';
 
 switch ($_SERVER['PATH_INFO'] ?? $_SERVER['REQUEST_URI']) {
   case '/':
-    include 'views/home.php';
+    render('home', []);
     break;
 
   case '/home':
-    include 'views/home.php';
+    render('home', []);
     break;
   
   case '/menu_list':
@@ -27,7 +27,7 @@ switch ($_SERVER['PATH_INFO'] ?? $_SERVER['REQUEST_URI']) {
     if (!empty($_GET) && !empty($_GET['cond_date'])) {
       $cond_date = $_GET['cond_date'];
     }
-    include 'views/order_list.php';
+    render('order_list', ['orders' => $orders, 'cond_date' => $cond_date]);
     break;
 
   case '/order_detail':
@@ -36,11 +36,11 @@ switch ($_SERVER['PATH_INFO'] ?? $_SERVER['REQUEST_URI']) {
     $order = Order::getOrder($_GET['id']);
     if (empty($order)) echo "Bad Request";
 
-    include 'views/order_detail.php';
+    render('order_detail', ['order' => $order]);
     break;
 
   case '/new_menu':
-    include 'views/form_menu.php';
+    render('form_menu', []);
     break;
 
   case '/create_menu':
@@ -54,7 +54,7 @@ switch ($_SERVER['PATH_INFO'] ?? $_SERVER['REQUEST_URI']) {
 
   case '/edit_menu';
     $old = Menu::getMenu($_GET['id']);
-    include 'views/form_menu.php';
+    render('form_menu', ['old' => $old]);
     break;
 
   case '/update_menu':

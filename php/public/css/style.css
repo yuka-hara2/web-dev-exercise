@@ -1,25 +1,228 @@
+/* ===== 全体 ===== */
+body {
+  background-color: #f6f3ee; /* ベージュ */
+  font-family: "Helvetica Neue", "Arial", sans-serif;
+  color: #3e3a39;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== ヘッダー ===== */
+header {
+  background-color: #6f4e37; /* コーヒーブラウン */
+  color: #ffffff;
+  padding: 16px 24px;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+/* ===== コンテナ ===== */
+.container {
+  background-color: #ffffff;
+  max-width: 80%;
+  margin: 24px auto;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== ボタン ===== */
+button {
+  background-color: #88b04b; /* グリーン */
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background-color: #7aa63f;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* サブボタン */
+button.secondary {
+  background-color: #d6cfc4;
+  color: #3e3a39;
+}
+
+button.secondary:hover {
+  background-color: #c8c0b5;
+}
+
+/* ===== アンカーリンクをボタン化 ===== */
+a.button {
+  display: inline-block;
+  background-color: #88b04b; /* ボタンと同じグリーン */
+  color: #ffffff;
+  text-decoration: none; /* 下線を消す */
+  padding: 10px 18px;
+  margin: 10px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  text-align: center;
+}
+
+/* ホバー時 */
+a.button:hover {
+  background-color: #7aa63f;
+}
+
+/* クリック感 */
+a.button:active {
+  transform: translateY(1px);
+}
+
+/* キーボード操作対応（アクセシビリティ） */
+a.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(136, 176, 75, 0.4);
+}
+
+/* ===== サブボタン風 ===== */
+a.button.secondary {
+  background-color: #d6cfc4;
+  color: #3e3a39;
+}
+
+a.button.secondary:hover {
+  background-color: #c8c0b5;
+}
+
+
+/* ===== テーブル ===== */
 table {
   width: 100%;
   border-collapse: collapse;
-  background: white;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-top: 16px;
+  font-size: 0.9rem;
 }
 
-th, td {
-  padding: 12px 15px;
-  border: 1px solid #ddd;
+th {
+  background-color: #f0ebe4;
+  color: #6f4e37;
   text-align: left;
+  padding: 12px;
+  font-weight: 600;
 }
 
-thead {
-  background-color: #4a90e2;
-  color: white;
+td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e0d8;
 }
 
-tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
+tr:hover td {
+  background-color: #faf7f3;
 }
 
-tbody tr:hover {
-  background-color: #f1f7ff;
+/* ===== 見出し ===== */
+h1, h2, h3 {
+  color: #6f4e37;
+  margin-top: 10px;
+  margin-left: 10px;
 }
+
+a.menu {
+  padding: 15px 18px;
+  font-size: 2rem;
+}
+
+.top-menu {
+  display:flex;
+  flex-flow: column;
+  justify-content:space-between;
+}
+/* ===== input 共通 ===== */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="date"],
+select,
+textarea {
+  background-color: #ffffff;
+  color: #3e3a39;
+  border: 1px solid #d6cfc4;
+  padding: 10px 14px;        /* ← ボタンと高さを合わせる */
+  border-radius: 8px;        /* ← ボタンと同じ丸み */
+  font-size: 0.95rem;        /* ← ボタンと同じ文字サイズ */
+  line-height: 1.4;
+  /*width: 100%;*/
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* ===== フォーカス時 ===== */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #88b04b; /* グリーン */
+  box-shadow: 0 0 0 3px rgba(136, 176, 75, 0.3);
+}
+
+/* ===== プレースホルダー ===== */
+input::placeholder,
+textarea::placeholder {
+  color: #b5aea4;
+}
+
+/* ===== 無効状態 ===== */
+input:disabled,
+select:disabled,
+textarea:disabled {
+  background-color: #f0ebe4;
+  color: #9c948a;
+  cursor: not-allowed;
+}
+
+label {
+  display: block;
+  font-size: 1rem;
+  color: #6f4e37;
+  margin-bottom: 6px;
+}
+
+/* ===== 定義リスト全体 ===== */
+dl {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 12px 16px;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== 項目名 ===== */
+dt {
+  background-color: #f0ebe4;
+  color: #6f4e37;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 10px 14px;      /* ← inputと同じ高さ感 */
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+
+/* ===== 値 ===== */
+dd {
+  margin: 0;
+  padding: 10px 14px;      /* ← inputと揃える */
+  background-color: #ffffff;
+  border: 1px solid #d6cfc4;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #3e3a39;
+  width: 60%;
+}
+
